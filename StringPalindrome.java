@@ -1,34 +1,32 @@
-package Strings;
 
 public class StringPalindrome {
+
 	public static void main(String[] args) {
-
-		String s1 = "radar";
-		boolean a = stringPalin(s1);
-
-		if (a == true) {
-			System.out.println("Palindrome");
-		} else {
-			System.out.println("not a palindrome");
+		
+		String s="level";
+		boolean result=isPalindrome(s);
+		
+		if(result==true) {
+			
+			
+			System.out.println("palindrome"+s);
 		}
+		else
+			System.out.println("not a "+s);
 	}
 
-	public static boolean stringPalin(String s1) {
+	private static boolean isPalindrome(String s1) {
 
-		int left = 0;
-		int right = s1.length() - 1;// radar
-
-		while (left < right) {
-
-			if (s1.charAt(left) != s1.charAt(right)) {
-
+		int n=s1.length();
+		
+		for(int i=0;i<n/2;i++) {
+			
+			if(s1.charAt(i)!=s1.charAt(n-i-1)) {
+				
 				return false;
 			}
-			left++;
-			right--;
 		}
-
+		
 		return true;
-
 	}
 }
